@@ -1,0 +1,67 @@
+1->Friend Class A friend class can access private and protected members of other class in which it is declared as friend.
+
+2-> if class sushil is not friend of class sudhir then it can not use private member movie and salary.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class sudhir
+{
+    string movie;
+    double salary;
+    friend class sushil;
+
+ public:
+    sudhir(double salary,string movie);
+
+
+
+
+};
+sudhir::sudhir(double salary,string movie)
+{
+
+    this->salary=salary;
+    this->movie=movie;
+}
+
+
+class sushil
+{
+
+ public:
+    string webseries;
+    double fee;
+    sushil(double fee,string webseries);
+    void info(sudhir pal);
+
+
+
+};
+
+sushil::sushil(double fee,string webseries)
+{
+
+    this->webseries=webseries;
+    this->fee=fee;
+}
+
+void sushil::info(sudhir pal)
+{
+    cout<<"Sudhir"<<endl;
+    cout<<pal.movie<<endl;
+    cout<<pal.salary<<endl;
+    cout<<"Sushil"<<endl;
+    cout<<webseries<<endl;
+    cout<<fee<<endl;
+}
+
+int main()
+{
+
+sudhir pal1(1300000.000,"From Amazon Prime");
+sushil pal2(3000.000,"From Netflix");
+pal2.info(pal1);
+
+
+}

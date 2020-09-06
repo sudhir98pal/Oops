@@ -1,0 +1,32 @@
+
+// Inline functions may be class member functions. For example, this is a perfectly valid
+#include <iostream>
+using namespace std;
+class sudhir
+{
+string name;
+string branch;
+public:
+void init(string name, string branch);
+void show();
+};
+
+inline void sudhir::init(string name,string branch)
+{
+this->name=name;
+this->branch=branch;
+}
+// Create another inline function.
+inline void sudhir::show()
+{
+cout<<name<<endl;
+cout<<branch<<endl;
+
+}
+int main()
+{
+sudhir pal;
+pal.init("sudhir", "cse");
+pal.show();
+return 0;
+}

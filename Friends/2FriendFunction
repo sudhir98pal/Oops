@@ -1,0 +1,46 @@
+
+/*
+
+1->A friend function has access to all private and protected members
+of the class for which it is a friend.
+
+
+
+*/
+
+
+#include <bits/stdc++.h>
+using namespace std;
+class sudhir
+{
+double balance;
+int chocolates;
+public:
+friend double manageBalance(sudhir x);
+sudhir(double balance,int chocolates);
+
+};
+
+sudhir::sudhir(double balance, int chocolates)
+{
+this->balance=balance;
+this->chocolates=chocolates;
+}
+
+// Note: manageBalance() is not a member function of any class.
+double manageBalance(sudhir x)
+{
+/*
+Because manageBalance() is a friend of sudhir, it can
+directly access balance and chocolates.
+
+ */
+return x.balance + 5*x.chocolates;
+}
+int main()
+{
+sudhir pal(125.040,15);
+
+cout <<manageBalance(pal);
+return 0;
+}

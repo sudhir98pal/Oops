@@ -1,4 +1,4 @@
-
+-----it is common for a compiler not to inline a recursive function-------
 
 #include <iostream>
 inline int max(int a, int b)

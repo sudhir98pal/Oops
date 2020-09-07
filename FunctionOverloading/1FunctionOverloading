@@ -1,0 +1,53 @@
+/*
+->One way that C++ achieves polymorphism is through the use of function overloading.
+
+
+
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class box
+{
+public:
+    double area(double len);
+    int area(int len);
+    int area(string len);
+
+};
+
+double box::area(double length)
+{
+
+    return length*length;
+}
+
+int box::area(string length)
+{
+    int len=0;
+    int i=0;
+    while(i<length.size())
+    {
+        len=len*10+(length[i]-'0');
+
+        i++;
+    }
+    return len*len;
+
+}
+
+int box::area(int length)
+{
+
+    return length*length;
+}
+int main()
+{
+
+box b;
+cout<<b.area(12)<<endl;
+cout<<b.area(12.05)<<endl;
+cout<<b.area("1205")<<endl;
+
+}

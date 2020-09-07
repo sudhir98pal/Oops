@@ -1,0 +1,34 @@
+
+// if class has one argument for constructor we pass value to constructor as below
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class box
+{
+    private:
+    int length;
+    public:
+    box(int len);
+    int area();
+};
+
+box::box(int len)
+{
+    this->length=len;
+}
+
+int box::area()
+{
+
+    return length*length;
+}
+int main()
+{
+
+
+box b=5;
+cout<<"area"<<endl;
+cout<<b.area()<<endl;
+
+}

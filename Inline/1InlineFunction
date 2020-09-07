@@ -1,4 +1,5 @@
 -----it is common for a compiler not to inline a recursive function-------
+----- Macros cannot access private members of class. Macros looks like function call but they are actually not ,this is difference between macros and inline.--------
 
 #include <iostream>
 inline int max(int a, int b)

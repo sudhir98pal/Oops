@@ -1,0 +1,95 @@
+// if class has one argument for constructor we pass value to constructor as below
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class date
+{
+
+    int day;
+    int month;
+    int year;
+  public:
+    date(string mdate);
+    date(int day,int month,int year);
+    void showMeThedate();
+
+};
+date::date(int day,int month,int year)
+{
+
+    this->day=day;
+    this->month=month;
+    this->year=year;
+}
+
+date::date(string s)
+{
+      map<string,int> mp;
+    mp["Jan"]=1;
+    mp["Feb"]=2;
+    mp["Mar"]=3;
+    mp["Apr"]=4;
+    mp["May"]=5;
+    mp["Jun"]=6;
+    mp["Jul"]=7;
+    mp["Aug"]=8;
+    mp["Sep"]=9;
+    mp["Oct"]=10;
+    mp["Nov"]=11;
+    mp["Dec"]=12;
+
+        int mday=0;
+
+       int myear=0;
+       int i=0;
+        while(s[i]>='0'&&s[i]<='9')
+        {
+            mday=mday*10+s[i]-'0';
+            i++;
+        }
+
+day=mday;
+        while(s[i]!=' ') i++;
+        i++;
+        string mmonth="";
+        while(s[i]!=' ')
+        {
+            mmonth+=s[i];
+            i++;
+        }
+
+        month=mp[mmonth];
+
+        while(s[i]!=' ') i++;
+        i++;
+        while(i<s.length())
+        {
+            myear=myear*10+(s[i]-'0');
+            i++;
+        }
+        year=myear;
+
+
+
+        return ;
+}
+void date::showMeThedate()
+{
+
+    cout<<day<<endl;
+cout<<month<<endl;
+cout<<year<<endl;
+}
+int main()
+{
+
+
+date d1("20th Oct 2052");
+
+date d2(11,12,2050);
+
+d1.showMeThedate();
+d2.showMeThedate();
+
+}
